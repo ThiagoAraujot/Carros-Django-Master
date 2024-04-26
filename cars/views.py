@@ -6,7 +6,7 @@ from cars.forms import CarForm
 
 
 def car_view(request):
-    cars = Car.objects.all().order_by('-id')
+    cars = Car.objects.all().order_by('-value')
     search = request.GET.get('search')
     if search:
         cars = Car.objects.filter(model__icontains=search)
