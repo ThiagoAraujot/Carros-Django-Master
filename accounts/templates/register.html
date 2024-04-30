@@ -5,6 +5,7 @@
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    height: 100vh;
   }
 
   .form-container {
@@ -54,38 +55,39 @@
   }
 </style>
 
-<div class="form-container">
-  <form method="post">
-    {% csrf_token %}
+<body>
+  <div class="form-container">
+    <form method="post">
+      {% csrf_token %}
 
-    <div class="form-group">
-      {% if user_form.username.errors %}
-      <div class="error">{{ user_form.username.errors }}</div>
-      {% endif %}
-      <label>Usuário:</label>
-      {{ user_form.username }}
-    </div>
+      <div class="form-group">
+        {% if user_form.username.errors %}
+        <div class="error">{{ user_form.username.errors }}</div>
+        {% endif %}
+        <label>Usuário:</label>
+        {{ user_form.username }}
+      </div>
 
-    <div class="form-group">
-      {% if user_form.password1.errors %}
-      <div class="error">{{ user_form.password1.errors }}</div>
-      {% endif %}
-      <label>Senha:</label>
-      {{ user_form.password1 }}
-    </div>
+      <div class="form-group">
+        {% if user_form.password1.errors %}
+        <div class="error">{{ user_form.password1.errors }}</div>
+        {% endif %}
+        <label>Senha:</label>
+        {{ user_form.password1 }}
+      </div>
 
-    <div class="form-group">
-      {% if user_form.password2.errors %}
-      <div class="error">{{ user_form.password2.errors }}</div>
-      {% endif %}
-      <label>Confirmação de senha:</label>
-      {{ user_form.password2 }}
-    </div>
+      <div class="form-group">
+        {% if user_form.password2.errors %}
+        <div class="error">{{ user_form.password2.errors }}</div>
+        {% endif %}
+        <label>Confirmação de senha:</label>
+        {{ user_form.password2 }}
+      </div>
 
-    <div class="form-group">
-      <input type="submit" value="Registrar" />
-    </div>
-  </form>
-</div>
-
+      <div class="form-group">
+        <input type="submit" value="Registrar" />
+      </div>
+    </form>
+  </div>
+</body>
 {% endblock %}
