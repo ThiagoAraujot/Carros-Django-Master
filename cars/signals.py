@@ -18,7 +18,7 @@ def car_inventory_update():
 @receiver(pre_save, sender=Car)
 def car_pre_save(sender, instance, **kwargs):
     if not instance.bio:
-        instance.bio = "Descrição gereada automaticamente"
+        instance.bio = "Frase gereada automaticamente"
 
 @receiver(post_save, sender=Car)
 def car_pre_delete(sender, instance, **kwargs):
